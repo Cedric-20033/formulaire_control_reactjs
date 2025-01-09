@@ -1,18 +1,16 @@
 /**
  * 
- * @param {string} type 
- * @param {string} placeholder  
+ * @param {string} placeholder 
  * @param {string} label
- * @param {(s:string) => void} onChange
- * @param {string} value
+ * @param {(s:string) => void} onChange 
+ * @param {string} value 
  * @returns 
  */
-export function Input({type, placeholder, label, onChange, value}){
-    
+export function Textarea({placeholder, label, onChange, value}){
+
     return <div className="col">
         <label htmlFor={placeholder} className="mt-3"><strong>{label}</strong></label>
-        <input 
-            type={type} 
+        <textarea 
             placeholder={placeholder}
             className="mt-2 form-control"
             id={placeholder}
@@ -20,5 +18,4 @@ export function Input({type, placeholder, label, onChange, value}){
             value = {value}
         />
         </div>
-    
 }
