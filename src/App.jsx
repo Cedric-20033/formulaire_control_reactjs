@@ -3,6 +3,7 @@ import { Input } from './composants/forms/Input'
 import { Select } from './composants/forms/select'
 import './app.css'
 import { Textarea } from './composants/forms/textarea'
+import { Button } from './composants/forms/button'
 
 function App() {
   const [phone, setPhone] = useState('')
@@ -24,6 +25,7 @@ function App() {
 
   const [masque3, setMasque3] = useState(false)
   const [masqueValue3, setMasqueValue3] = useState('-')
+
 
   return (
     <>
@@ -50,6 +52,8 @@ function App() {
       }}/>
 
       <Part3 functionParam={functionParam} functionBody={functionBody} setFunctionParam={setFunctionParam} setFunctionBody={setFunctionBody} masque3={masque3}/>
+
+      <Part4/>
     </div>
       
     </>
@@ -85,12 +89,22 @@ function Part3({functionParam, functionBody, setFunctionParam, setFunctionBody, 
   
   return <div hidden={masque3}>
     <div className="row mb-5 d-flex">
-      <Input type="text" placeholder="Set function parameters" label="Function parameters" onChange={setFunctionParam} value={functionParam}/>
+      <Input type="text" placeholder="Set function parameters" label="*Function parameters:" onChange={setFunctionParam} value={functionParam}/>
     </div>
+
     <div className="row mb-5">
-      <Textarea placeholder="define code" label="Functions body" onChange={setFunctionBody} value={functionBody}/>
+      <Textarea placeholder="define code" label="*Functions body:" onChange={setFunctionBody} value={functionBody}/>
     </div>
   </div>
+}
+
+//composant part4
+function Part4(){
+
+  return <div className="row mb-5">
+    <Button value="boutton"/>
+  </div>
+  
 }
 
 export default App
